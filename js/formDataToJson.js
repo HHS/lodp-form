@@ -458,7 +458,7 @@ async function emailFile(event) {
 		const subject = "HHS Source Code Anti-Data Call Results";
 		const body = `Hello,\n\nHere is your response:\n\n${jsonString}\n\nThank you!`;
 
-		const recipients = ["opensource@cms.hhs.gov"];
+		const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
 
 		const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
