@@ -1,0 +1,148 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "HHS Source Code “Anti-Data Call” — Repository and Asset Tracking",
+    "description": "Track source code repositories, codespaces, and resources funded by HHS offices. This short questionnaire will take <5 minutes per HHS repository.",
+    "type": "object",
+    "properties": {
+        "items": {
+            "HHS Division": {
+                "type": "string",
+                "description": "What is your divison within HHS?",
+                "enum": [
+                    "Administration for Children and Families (ACF)",
+                    "Administration for Community Living (ACL)",
+                    "Administration for a Healthy America (AHA)",
+                    "Agency for Healthcare Research and Quality (AHRQ)",
+                    "Agency for Toxic Substances and Disease Registry (ATSDR)",
+                    "Centers for Disease Control and Prevention (CDC)",
+                    "Centers for Medicare & Medicaid Services (CMS)",
+                    "Food and Drug Administration (FDA)",
+                    "Health Resources and Services Administration (HRSA)",
+                    "Indian Health Service (IHS)",
+                    "National Institutes of Health (NIH)",
+                    "Office of the Secretary (OS)",
+                    "Substance Abuse and Mental Health Services Administration (SAMHSA)",
+                    "Office of the Assistant Secretary for Administration (ASA)",
+                    "Office of the Assistant Secretary for Financial Resources (ASFR)",
+                    "Office of the Assistant Secretary for Health (OASH)",
+                    "Office of the Assistant Secretary for Legislation (ASL)",
+                    "Office of the Assistant Secretary for Planning and Evaluation (ASPE)",
+                    "Office of the Assistant Secretary for Preparedness and Response (ASPR)",
+                    "Office of the Assistant Secretary for Public Affairs (ASPA)",
+                    "Office for Civil Rights (OCR)",
+                    "Departmental Appeals Board (DAB)",
+                    "Office of the General Counsel (OGC)",
+                    "Office of Global Affairs (OGA)",
+                    "Office of Inspector General (OIG)",
+                    "Office of Medicare Hearings and Appeals (OMHA)",
+                    "Office of the National Coordinator for Health Information Technology (ONC)"
+                ]
+            },
+            "Subdivison": {
+                "type": "string",
+                "description": "What is your Subdivision, Institute, or Center?"
+            },
+            "Office or Program": {
+                "type": "string",
+                "description": "What Office or Program do you belong to?"
+            },
+            "HHS Source Code - Resource Information": {
+                "type": "object",
+                "description": "If the Source Code POC differs from the HHS POC completing this questionnaire, please provide your contact information below. ",
+                "properties": {
+                    "Basic Information": {
+                        "type": "array",
+                        "description": "License(s) for the release",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Resource Name": {
+                                    "type": "string",
+                                    "description": "Names of repositories, codespaces, or resources funded by your office in the last 10 years"
+                                },
+                                "Resource Link": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "Links to repositories, codespaces, or resources"
+                                },
+                                "Date Created": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Date Created"
+                                },
+                                "Status": {
+                                    "type": "string",
+                                    "description": "Project status",
+                                    "enum": [
+                                        "Ongoing",
+                                        "Ended"
+                                    ]
+                                },
+                                "Date Ended": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Date Ended (if applicable)"
+                                },
+                                "Management Type": {
+                                    "type": "string",
+                                    "description": "Management type",
+                                    "enum": [
+                                        "Federally managed",
+                                        "Contractor managed"
+                                    ]
+                                },
+                                "Source Code POC Name": {
+                                    "type": "string",
+                                    "description": "Resource project manager or POC First and Last Name"
+                                },
+                                "Source Code POC Phone Number": {
+                                    "type": "string",
+                                    "description": "Resource project manager or POC Phone Number"
+                                },
+                                "Source Code POC Email": {
+                                    "type": "string",
+                                    "format": "email",
+                                    "description": "Resource project manager or POC Email"
+                                }
+                            },
+                            "required": [
+                                "Resource Name",
+                                "Resource Link",
+                                "Date Created",
+                                "Status",
+                                "Management Type",
+                                "Source Code POC Name",
+                                "Source Code POC Email"
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "HHS Source Code - Resource Information"
+                ]
+            },
+            "HHS POC": {
+                "type": "string",
+                "description": "First and Last Name of HHS POC"
+            },
+            "HHS POC Job Title": {
+                "type": "string",
+                "description": "What is your current job title?"
+            },
+            "HHS POC Phone Number": {
+                "type": "string",
+                "description": "What is your phone number?"
+            },
+            "HHS POC Email": {
+                "type": "string",
+                "format": "email",
+                "description": "What is your HHS or HHS Division email address?"
+            }
+        }
+    },
+    "required": [
+        "HHS Division",
+        "HHS Source Code - Resource Information"
+    ]
+}

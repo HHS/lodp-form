@@ -1,0 +1,62 @@
+{
+  "name": "codejson-generator",
+  "description": "Form to generate a CMS code.json",
+  "longDescription": "A web form where project teams fill out information about their project and creates a completed code.json for local download to add to repositories.",
+  "status": "Production",
+  "permissions": {
+    "license": [
+      {
+        "name": "CC0 1.0 Universal",
+        "URL": "https://github.com/DSACMS/codejson-generator/blob/main/LICENSE"
+      }
+    ],
+    "usageType": "openSource",
+    "exemptionText": ""
+  },
+  "organization": "Centers for Medicare & Medicaid Services",
+  "repositoryURL": "https://github.com/DSACMS/codejson-generator",
+  "vcs": "git",
+  "laborHours": 3347,
+  "platforms": [
+    "web"
+  ],
+  "categories": [
+    "it-asset-management",
+    "inventory-management",
+    "data-collection"
+  ],
+  "softwareType": "standalone/web",
+  "languages": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "maintenance": "internal",
+  "date": {
+    "created": "2024-11-22T16:30:29Z",
+    "lastModified": "2025-02-13T20:05:39Z",
+    "metaDataLastUpdated": "2025-02-14T15:06:13.678Z"
+  },
+  "tags": [
+    "codejson",
+    "compliance",
+    "OSPO"
+  ],
+  "contact": {
+    "email": "opensource@cms.hhs.gov",
+    "name": "CMS Open Source Team"
+  },
+  "localisation": false,
+  "repositoryType": "website",
+  "userInput": false,
+  "fismaLevel": "Low",
+  "group": "CMS/OA/DSAC",
+  "subsetInHealthcare": [
+    "Operational"
+  ],
+  "userType": [
+    "Government"
+  ],
+  "repositoryHost": "github.com/DSACMS",
+  "maturityModelTier": 3
+}
