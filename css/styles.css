@@ -13,9 +13,9 @@ textarea {
     margin-top: 20px;
     margin-bottom: 20px;
     background: lightgray;
-    width: 100%; 
-    max-width: 800px; 
-    box-sizing: border-box; 
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
 #github-url-form {
@@ -24,9 +24,9 @@ textarea {
 }
 
 #repo-url {
-    width: 100%; 
-    max-width: 750px; 
-    box-sizing: border-box; 
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
 }
 
 #repo-url-button {
@@ -51,12 +51,48 @@ textarea {
 }
 
 @keyframes slideDown {
-    from { 
+    from {
         opacity: 0;
         transform: translateY(-10px);
     }
-    to { 
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.local-actions,
+.submission-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.action {
+    margin-top: 10px;
+    width: 100%
+}
+
+.copy,
+.download,
+.formio-button-add-row {
+    display: block;
+    width: 100%;
+}
+
+.issue,
+.email {
+    display: block;
+    width: 100%;
+}
+
+#copy {
+    margin-right: 10px;
 }

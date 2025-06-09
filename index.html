@@ -62,16 +62,38 @@
 	<div id="formio"></div>
 
 	<div id="output">
-		<label for="json-result">Your Form Data </label>
+		<label for="json-result">Submit your response below </label>
 		<textarea class="form-control" rows="10" id="json-result" readonly></textarea>
-		<button type="button" class="btn btn-outline" href="#" onclick="copyToClipboard(event)">Copy</button>
-		<button type="button" class="btn btn-outline" href="#" onclick="downloadFile(event)">Download</button>
+		<div class="actions">
+			<div class="local-actions">
+				<div class="action" id="copy">
+					<p>Copy your results</p>
+					<button type="button" class="btn btn-primary copy" href="#"
+						onclick="copyToClipboard(event)">Copy</button>
+				</div>
+				<div class="action" id="download">
+					<p>Download results to a json file</p>
+					<button type="button" class="btn btn-primary download" href="#"
+						onclick="downloadFile(event)">Download</button>
+				</div>
+			</div>
+			<!-- <div class="submission-actions"> -->
+			<div class="action">
+				<p>Use for public and non-sensitive resources (must be logged in to GitHub):</p>
+				<button type="button" class="btn btn-primary issue" href="#"
+					onclick="createGitHubIssueForm(event)">Create
+					GitHub
+					Issue</button>
+			</div>
+			<div class="action">
+				<p>Use for private and sensitive resources:</p>
+				<button type="button" class="btn btn-success email" href="#" onclick="emailFile(event)">Email</button>
+			</div>
+			<!-- </div> -->
+		</div>
+		<!-- <button type="button" class="btn btn-outline" href="#" onclick="createAutoGitHubIssue(event)">Auto-Create Issue
+			(API Key Required)</button> -->
 		<!-- <button type="button" class="btn btn-outline" href="#" onclick="createProjectPR(event)">Create Pull Request</button> -->
-		<button type="button" class="btn btn-outline" href="#" onclick="createGitHubIssueForm(event)">Create GitHub
-			Issue (Must be logged in to GitHub)</button>
-		<button type="button" class="btn btn-outline" href="#" onclick="createAutoGitHubIssue(event)">Auto-Create Issue
-			(API Key Required)</button>
-		<button type="button" class="btn btn-outline" href="#" onclick="emailFile(event)">Email</button>
 	</div>
 
 </body>
