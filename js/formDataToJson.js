@@ -86,9 +86,22 @@ async function createCodeJson(data) {
 	document.getElementById("json-result").value = jsonString;
 }
 
+function checkIfResponseGenerated() {
+	const textArea = document.getElementById("json-result");
+	if(!textArea.value || textArea.value.trim() === '') {
+		alert("Please generate your response first by clicking 'Generate your response!' button.");
+		return false;
+	}
+	return true;
+}
+
 // Copies json to clipboard
 async function copyToClipboard(event) {
 	event.preventDefault();
+
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
 
 	var textArea = document.getElementById("json-result");
 	textArea.select();
@@ -243,6 +256,10 @@ async function createPR(projectURL, token) {
 async function createProjectPR(event) {
 	event.preventDefault();
 
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
+
 	const textArea = document.getElementById("json-result");
 	const JSONObj = JSON.parse(textArea.value)
 
@@ -285,6 +302,10 @@ async function createProjectPR(event) {
 async function downloadFile(event) {
 	event.preventDefault();
 
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
+
 	const codeJson = document.getElementById("json-result").value
 	const jsonObject = JSON.parse(codeJson);
 	const jsonString = JSON.stringify(jsonObject, null, 2);
@@ -325,6 +346,10 @@ function generateIssueBody(JSONObj) {
 // Triggers new issue in GitHub
 async function createGitHubIssueForm(event) {
 	event.preventDefault();
+
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
 
 	const textArea = document.getElementById("json-result");
 	const JSONObj = JSON.parse(textArea.value);
@@ -376,6 +401,10 @@ function createGitHubNewIssueURL(title, body) {
 // Creates Auto Issue
 async function createAutoGitHubIssue(event) {
 	event.preventDefault();
+
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
 
 	const textArea = document.getElementById("json-result");
 	const JSONObj = JSON.parse(textArea.value);
@@ -445,6 +474,10 @@ async function createIssueOnGitHub(token, title, body) {
 // Triggers email(mailtolink)
 async function emailFile(event) {
 	event.preventDefault();
+
+	if (!checkIfResponseGenerated()) {
+		return;
+	}
 
 	const codeJson = document.getElementById("json-result").value
 	const jsonObject = JSON.parse(codeJson);
