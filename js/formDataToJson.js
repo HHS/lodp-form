@@ -15,6 +15,10 @@ async function retrieveFile(filePath) {
 }
 
 function isMultiSelect(obj) {
+	if (obj && obj.Suggestions !== undefined) {
+		return false;
+	}
+
 	for (const key in obj) {
 		if (typeof obj[key] !== 'boolean') {
 			return false;
@@ -45,6 +49,22 @@ function populateObject(data, schema) {
 	for (const key of fields) {
 		let value = data[key];
 
+		if (value === undefined || value === null) {
+			continue;
+		}
+
+		if (schema.properties.items[key]?.type === "object" &&
+			schema.properties.items[key]?.properties?.Suggestions) {
+				if (typeof value === "object" && !Array.isArray(value)) {
+					reorderedObject[key] = value;
+				} else {
+					reorderedObject[key] = {
+						Suggestions: Array.isArray(value) ? value : []
+					};
+				}
+				continue;
+			}
+
 		// Adjusts value accordingly if multi-select field
 		if ((typeof value === "object" && isMultiSelect(value))) {
 			value = getSelectedOptions(value);
@@ -52,7 +72,7 @@ function populateObject(data, schema) {
 
 		reorderedObject[key] = value;
 	}
-
+	console.log({reorderedObject})
 	return reorderedObject;
 }
 
@@ -348,7 +368,14 @@ function generateIssueBody(JSONObj) {
 		"Intra-HHS Data Sharing — Be the Change",
 		"Real-World Data for Impact",
 		"Public-Private Partnerships with Transparency to Accelerate Impact",
-		"Public Engagement with, by, and for We the People"
+		"Public Engagement with, by, and for We the People",
+		"Appendix A - Acronyms, Definitions, Keywords, and Concepts",
+        "Appendix B - Open Science Disclosure Risk Management (2019 NSTC SOS)",
+        "Appendix C - HHS Open Data Action Items with Timeline",
+        "Appendix D - HHS Partnerships with Transparency",
+        "Appendix E - Novel Models of Data Governance: Inspired by Tribal Data Governance for Radical, Collective, Self-Governance",
+        "Appendix F – HHS Data Improvement Process – 2025 Status",
+        "Other"
 	];
 
 	categories.forEach(category => {

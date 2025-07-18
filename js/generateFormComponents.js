@@ -31,6 +31,9 @@ function determineValidation(fieldName, fieldObject, requiredArray) {
 
 // Function that determines type of form component based on field
 function determineType(field) {
+	if (field.enum && field.enum.includes("HHS Objectives, Values, and Return on Investment (ROI) with Data")) {
+		return "select"
+	}
 	if (field.type === "object") {
 		return "container";
 	} else if (field.type === "array") {
@@ -67,6 +70,22 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 	const componentType = determineType(fieldObject);
 	const validate = determineValidation(fieldName, fieldObject, requiredArray);
 	switch (componentType) {
+		case "select":
+			return {
+				type: "select",
+				key: fieldName,
+				label: fieldName,
+				widget: "choices",
+				data: {
+					values: fieldObject.enum.map(item => ({
+						label: item,
+						value: item
+					}))
+				},
+				validate: {
+					required: requiredArray.includes(fieldName)
+				}
+			};
 		case "textfield":
 			return {
 				type: "textfield",
@@ -210,21 +229,15 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 		case "container":
 			return {
 				label: fieldName,
-				title: fieldName,
 				hideLabel: false,
 				tableView: false,
 				validateWhenHidden: false,
 				key: fieldName,
-				type: "panel",
+				type: "container",
 				input: true,
-				components: createAllComponents(fieldObject, fieldName),
-				description: fieldObject.description,
-				validate,
-				collapsible: true,
-				collapsed: true,
-				theme: 'default',
-				breadcrumb: 'none',
-				tooltip: ''
+				components: [],
+				description: fieldObject["description"],
+				validate
 			};
 		case "datagrid":
 			return {
@@ -246,7 +259,8 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 				components: [
 					{
 						type: "panel",
-						label: fieldName,
+						label: "",
+						title: "",
 						key: fieldName,
 						components: [],
 					}
@@ -261,7 +275,7 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 // Adds heading containing schema information
 function createFormHeading(title, description) {
 	const container = document.getElementById('form-header');
-	container.innerHTML = `<h1>${title}</h1>\n<h2>${description}</h2>`;
+	container.innerHTML = `<h1>${title}</h1>\n<p>${description}</p>`;
 }
 
 // Iterates through each json field and creates component array for Form.io
