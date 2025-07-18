@@ -96,3 +96,13 @@ textarea {
 #copy {
     margin-right: 10px;
 }
+
+span.card-title > span:first-child {
+    display: none !important;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}

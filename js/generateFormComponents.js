@@ -210,15 +210,21 @@ function createComponent(fieldName, fieldObject, requiredArray) {
 		case "container":
 			return {
 				label: fieldName,
+				title: fieldName,
 				hideLabel: false,
 				tableView: false,
 				validateWhenHidden: false,
 				key: fieldName,
-				type: "container",
+				type: "panel",
 				input: true,
-				components: [],
-				description: fieldObject["description"],
-				validate
+				components: createAllComponents(fieldObject, fieldName),
+				description: fieldObject.description,
+				validate,
+				collapsible: true,
+				collapsed: true,
+				theme: 'default',
+				breadcrumb: 'none',
+				tooltip: ''
 			};
 		case "datagrid":
 			return {
