@@ -179,7 +179,7 @@ async function createBranchOnProject(projectURL, token) {
 
 async function addFileToBranch(projectURL, token, JSONObj) {
 	const { owner, repo } = getOrgAndRepoArgsGitHub(projectURL);
-	const FILE_PATH = 'code-anti-data-call.json'
+	const FILE_PATH = 'lodp-form.json'
 	const createFileApiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${FILE_PATH}`;
 	const encodedContent = btoa(JSONObj);
 	console.log("Content: ", encodedContent);
@@ -314,7 +314,7 @@ async function downloadFile(event) {
 	// Create anchor element and create download link
 	const link = document.createElement("a");
 	link.href = URL.createObjectURL(blob);
-	link.download = "code-anti-data-call.json";
+	link.download = "lodp-form.json";
 
 	// Trigger the download
 	link.click();
@@ -325,20 +325,42 @@ function generateIssueTitle(JSONObj) {
 	let now = new Date();
 	let localeString = now.toLocaleString();
 
-	const resourceTitle = `${JSONObj["HHS Division"]}, ${localeString}` || `Unknown Name, ${localeString}`;
-	return `HHS Repository and Asset Tracking for: ${resourceTitle}`
+	const submitterName = JSONObj["Name"] || "Anonymous";
+	return `Living HHS Open Data Plan Suggestions from: ${submitterName} - ${localeString}`;
 }
 
 // Creates Issue Body
 function generateIssueBody(JSONObj) {
-	const resourceNames = JSONObj['HHS Source Code - Resource Information']['Basic Information']
-		.map(resource => resource['Resource Name']).join(' \n ')
+	let body = "## Living HHS Open Data Plan — Feedback to HHS\n\n";
 
-	let body = "## HHS Repository and Asset Tracking Details\n\n";
+	body += `**Submitted by:** ${JSONObj["Name"] || "Anonymous"}\n`;
+	body += `**Email:** ${JSONObj["Email"] || "Not provided"}\n\n`;
 
-	body += `### This issue was created using HHS Repository and Asset Tracking form.\n`
-	body += `**The following resources are being tracked:**\n ${resourceNames}\n\n`
+	body += "Summary of Suggestions:\n\n";
+
+	const categories = [
+		"HHS Objectives, Values, and Return on Investment (ROI) with Data",
+		"Unified HHS for Data Sharing",
+		"Data Collection Processes for Open Formats",
+		"Data Usage Information",
+		"Prioritizing Public Data Asset Review",
+		"Improving Processes for Meeting Open Data Goals",
+		"Intra-HHS Data Sharing — Be the Change",
+		"Real-World Data for Impact",
+		"Public-Private Partnerships with Transparency to Accelerate Impact",
+		"Public Engagement with, by, and for We the People"
+	];
+
+	categories.forEach(category => {
+		if (JSONObj[category] && JSONObj[category].Suggestions && JSONObj[category].Suggestions.length > 0) {
+			body += `- **${category}:** ${JSONObj[category].Suggestions.length} suggestions(s)\n`;
+		}
+	});
+
+	body += "\n### Full Submission Details:\n\n";
+	body += "```json\n";
 	body += JSON.stringify(JSONObj, null, 2);
+	body += "\n```\n";
 
 	return body;
 }
@@ -383,16 +405,16 @@ async function createGitHubIssueForm(event) {
 
 // Create GitHub URL
 function createGitHubNewIssueURL(title, body) {
-	const textArea = document.getElementById("json-result");
-	const JSONObj = JSON.parse(textArea.value);
-	const agency = JSONObj["HHS Division"];
-	const match = agency.match(/\(([^)]+)\)/);
+	// const textArea = document.getElementById("json-result");
+	// const JSONObj = JSON.parse(textArea.value);
+	// const agency = JSONObj["HHS Division"];
+	// const match = agency.match(/\(([^)]+)\)/);
 
-	const baseURL = "https://github.com/HHS/code-anti-data-call/issues/new";
+	const baseURL = "https://github.com/HHS/lodp-form/issues/new";
 	const params = new URLSearchParams({
 		title: title,
 		body: body,
-		labels: ['repository', 'assets', match[1]]
+		labels: ['suggestions', 'data-management']
 	});
 
 	return `${baseURL}?${params.toString()}`;
@@ -439,7 +461,7 @@ async function createIssueOnGitHub(token, title, body) {
 	const agency = JSONObj["HHS Division"];
 	const match = agency.match(/\(([^)]+)\)/);
 
-	const createIssueAPIURL = "https://api.github.com/repos/HHS/code-anti-data-call/issues";
+	const createIssueAPIURL = "https://api.github.com/repos/HHS/lodp-form/issues";
 
 	const response = await fetch(createIssueAPIURL,
 		{
@@ -452,7 +474,7 @@ async function createIssueOnGitHub(token, title, body) {
 			body: JSON.stringify({
 				title: title,
 				body: body,
-				labels: ['repository', 'assets', match[1]]
+				labels: ['suggestions', 'data-management']
 			})
 		});
 
@@ -488,10 +510,11 @@ async function emailFile(event) {
 
 		const jsonString = JSON.stringify(cleanData, null, 2);
 
-		const subject = "HHS Source Code Anti-Data Call Results";
-		const body = `Hello,\n\nHere is your response:\n\n${jsonString}\n\nThank you!`;
+		const subject = "Living HHS Open Data Plan — Feedback to HHS";
+		const body = `Hello,\n\nI have submitted suggestions for Living HHS Open Data Plan:\n\n${jsonString}\n\nThank you!`;
 
-		const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
+		// const recipients = ["opensource@cms.hhs.gov", "cdo@hhs.gov"];
+		const recipients = ["dinne.kopelevich@cms.hhs.gov"];
 
 		const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 

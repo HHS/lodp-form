@@ -1,148 +1,482 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "HHS Source Code “Anti-Data Call” — Repository and Asset Tracking",
-    "description": "Track source code repositories, codespaces, and resources funded by HHS offices. This short questionnaire will take <5 minutes per HHS repository.",
+    "title": "Tell Us About Your Experience with the Living HHS Open Data Plan",
+    "description": "This form is a voluntary request for public inputs and/or comments on the Living HHS Open Data Plan, published by the U.S. Department of Health and Human Services (HHS) version 1.0 in July 2025. It is an open-ended, free response sheet for you to share feedback, ideas, and/or suggestions with HHS—and the public— on the Living HHS Open Data Plan. All submissions will be open for public users to read online, so please adhere to the HHS Code of Conduct. The below prompt is followed by the table of contents with open-ended response fields if you would like to submit comment to a specific section of the Living HHS Open Data Plan.",
     "type": "object",
     "properties": {
         "items": {
-            "HHS Division": {
+            "Name": {
                 "type": "string",
-                "description": "What is your divison within HHS?",
-                "enum": [
-                    "Administration for Children and Families (ACF)",
-                    "Administration for Community Living (ACL)",
-                    "Administration for a Healthy America (AHA)",
-                    "Agency for Healthcare Research and Quality (AHRQ)",
-                    "Agency for Toxic Substances and Disease Registry (ATSDR)",
-                    "Centers for Disease Control and Prevention (CDC)",
-                    "Centers for Medicare & Medicaid Services (CMS)",
-                    "Food and Drug Administration (FDA)",
-                    "Health Resources and Services Administration (HRSA)",
-                    "Indian Health Service (IHS)",
-                    "National Institutes of Health (NIH)",
-                    "Office of the Secretary (OS)",
-                    "Substance Abuse and Mental Health Services Administration (SAMHSA)",
-                    "Office of the Assistant Secretary for Administration (ASA)",
-                    "Office of the Assistant Secretary for Financial Resources (ASFR)",
-                    "Office of the Assistant Secretary for Health (OASH)",
-                    "Office of the Assistant Secretary for Legislation (ASL)",
-                    "Office of the Assistant Secretary for Planning and Evaluation (ASPE)",
-                    "Office of the Assistant Secretary for Preparedness and Response (ASPR)",
-                    "Office of the Assistant Secretary for Public Affairs (ASPA)",
-                    "Office for Civil Rights (OCR)",
-                    "Departmental Appeals Board (DAB)",
-                    "Office of the General Counsel (OGC)",
-                    "Office of Global Affairs (OGA)",
-                    "Office of Inspector General (OIG)",
-                    "Office of Medicare Hearings and Appeals (OMHA)",
-                    "Office of the National Coordinator for Health Information Technology (ONC)"
-                ]
+                "description": "First and last name"
             },
-            "Subdivison": {
+            "Email": {
                 "type": "string",
-                "description": "What is your Subdivision, Institute, or Center?"
+                "format": "email",
+                "description": "Email address"
             },
-            "Office or Program": {
+            "Organization": {
                 "type": "string",
-                "description": "What Office or Program do you belong to?"
+                "description": "Organization or affiliation (optional)"
             },
-            "HHS Source Code - Resource Information": {
+            "HHS Objectives, Values, and Return on Investment (ROI) with Data": {
                 "type": "object",
-                "description": "If the Source Code POC differs from the HHS POC completing this questionnaire, please provide your contact information below. ",
+                "description": "Suggestions related to objectives, values, and return on investment (ROI)",
                 "properties": {
-                    "Basic Information": {
+                    "Suggestions": {
                         "type": "array",
-                        "description": "License(s) for the release",
+                        "description": "Your suggestions for improving objectives, values, and return on investment (ROI)",
                         "items": {
                             "type": "object",
                             "properties": {
-                                "Resource Name": {
+                                "Suggestion Title": {
                                     "type": "string",
-                                    "description": "Names of repositories, codespaces, or resources funded by your office in the last 10 years"
+                                    "description": "title"
                                 },
-                                "Resource Link": {
+                                "Suggestion Description": {
                                     "type": "string",
-                                    "format": "uri",
-                                    "description": "Links to repositories, codespaces, or resources"
+                                    "description": "Description of your suggestion"
                                 },
-                                "Date Created": {
+                                "Priority Level": {
                                     "type": "string",
-                                    "format": "date-time",
-                                    "description": "Date Created"
-                                },
-                                "Status": {
-                                    "type": "string",
-                                    "description": "Project status",
+                                    "description": "How important is this suggestion?",
                                     "enum": [
-                                        "Ongoing",
-                                        "Ended"
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
                                     ]
                                 },
-                                "Date Ended": {
+                                "Implementation Difficulty": {
                                     "type": "string",
-                                    "format": "date-time",
-                                    "description": "Date Ended (if applicable)"
-                                },
-                                "Management Type": {
-                                    "type": "string",
-                                    "description": "Management type",
+                                    "description": "How difficult is this to implement?",
                                     "enum": [
-                                        "Federally managed",
-                                        "Contractor managed"
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
                                     ]
-                                },
-                                "Source Code POC Name": {
-                                    "type": "string",
-                                    "description": "Resource project manager or POC First and Last Name"
-                                },
-                                "Source Code POC Phone Number": {
-                                    "type": "string",
-                                    "description": "Resource project manager or POC Phone Number"
-                                },
-                                "Source Code POC Email": {
-                                    "type": "string",
-                                    "format": "email",
-                                    "description": "Resource project manager or POC Email"
-                                }
-                            },
-                            "required": [
-                                "Resource Name",
-                                "Resource Link",
-                                "Date Created",
-                                "Status",
-                                "Management Type",
-                                "Source Code POC Name",
-                                "Source Code POC Email"
-                            ]
+                                }  
+                            }
                         }
                     }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "HHS Source Code - Resource Information"
-                ]
+                }
             },
-            "HHS POC": {
-                "type": "string",
-                "description": "First and Last Name of HHS POC"
+            "Unified HHS for Data Sharing": {
+                "type": "object",
+                "description": "Suggestions related to unified HHS for data sharing",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for improving data sharing",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
             },
-            "HHS POC Job Title": {
-                "type": "string",
-                "description": "What is your current job title?"
+            "Data Collection Processes for Open Formats": {
+                "type": "object",
+                "description": "Suggestions related to data collection processes for open formats",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for improving data collection",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
             },
-            "HHS POC Phone Number": {
-                "type": "string",
-                "description": "What is your phone number?"
+            "Data Usage Information": {
+                "type": "object",
+                "description": "Suggestions related to data usage information",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for improving data usage",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
             },
-            "HHS POC Email": {
-                "type": "string",
-                "format": "email",
-                "description": "What is your HHS or HHS Division email address?"
+            "Prioritizing Public Data Asset Review": {
+                "type": "object",
+                "description": "Suggestions related to prioritizing public data asset review",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for prioritizing public data asset review",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
+            },
+            "Improving Processes for Meeting Open Data Goals": {
+                "type": "object",
+                "description": "Suggestions related to improving processes for meeting open data goals",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for improving processes for meeting open data goals",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
+            },
+            "Intra-HHS Data Sharing — Be the Change": {
+                "type": "object",
+                "description": "Suggestions related to intra-HHS data sharing",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for intra-HHS data sharing",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
+            },
+            "Real-World Data for Impact": {
+                "type": "object",
+                "description": "Suggestions related to real-world data for impact",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for real-world data for impact",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
+            },
+            "Public-Private Partnerships with Transparency to Accelerate Impact": {
+                "type": "object",
+                "description": "Suggestions related to public-private partnerships",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for public-private partnerships",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }
+                    }
+                }
+            },
+            "Public Engagement with, by, and for We the People": {
+                "type": "object",
+                "description": "Suggestions related to public engagement",
+                "properties": {
+                    "Suggestions": {
+                        "type": "array",
+                        "description": "Your suggestions for public engagement",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Title": {
+                                    "type": "string",
+                                    "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Priority Level": {
+                                    "type": "string",
+                                    "description": "How important is this suggestion?",
+                                    "enum": [
+                                        "Low",
+                                        "Medium",
+                                        "High",
+                                        "Critical"
+                                    ]
+                                },
+                                "Implementation Difficulty": {
+                                    "type": "string",
+                                    "description": "How difficult is this to implement?",
+                                    "enum": [
+                                        "Easy",
+                                        "Medium",
+                                        "Hard",
+                                        "Very Hard"
+                                    ]
+                                }  
+                            }
+                        }    
+                    },
+                    "Additional Suggestions": {
+                        "type": "array",
+                        "description": "Add your own custom suggestions that don't fit the above categories",
+                         "items": {
+                            "type": "object",
+                            "properties": {
+                                "Suggestion Name": {
+                                    "type": "string",
+                                    "description": "Name your custom section"
+                                },
+                                "Suggestion Title": {
+                                "type": "string",
+                                "description": "title"
+                                },
+                                "Suggestion Description": {
+                                    "type": "string",
+                                    "description": "Description of your suggestion"
+                                },
+                                "Category": {
+                                    "type": "string",
+                                    "description": "What category does your suggestion fall under?"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     },
     "required": [
-        "HHS Division",
-        "HHS Source Code - Resource Information"
+        "Name",
+        "Email"
     ]
 }
