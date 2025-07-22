@@ -351,16 +351,16 @@ function generateIssueTitle(JSONObj) {
 	let now = new Date();
 	let localeString = now.toLocaleString();
 
-	const submitterName = JSONObj["Name"] || "Anonymous";
-	return `Living HHS Open Data Plan Suggestions from: ${submitterName} - ${localeString}`;
+	// const submitterName = JSONObj["Name"] || "Anonymous";
+	return `Living HHS Open Data Plan Suggestions: ${localeString}`;
 }
 
 // Creates Issue Body
 function generateIssueBody(JSONObj) {
 	let body = "## Living HHS Open Data Plan — Feedback to HHS\n\n";
 
-	body += `**Submitted by:** ${JSONObj["Name"] || "Anonymous"}\n`;
-	body += `**Email:** ${JSONObj["Email"] || "Not provided"}\n\n`;
+	// body += `**Submitted by:** ${JSONObj["Name"] || "Anonymous"}\n`;
+	// body += `**Email:** ${JSONObj["Email"] || "Not provided"}\n\n`;
 
 	body += "Summary of Suggestions:\n\n";
 
@@ -379,8 +379,6 @@ function generateIssueBody(JSONObj) {
         "Appendix B - Open Science Disclosure Risk Management (2019 NSTC SOS)",
         "Appendix C - HHS Open Data Action Items with Timeline",
         "Appendix D - HHS Partnerships with Transparency",
-        "Appendix E - Novel Models of Data Governance: Inspired by Tribal Data Governance for Radical, Collective, Self-Governance",
-        "Appendix F – HHS Data Improvement Process – 2025 Status",
         "Other"
 	];
 
@@ -443,7 +441,7 @@ function createGitHubNewIssueURL(title, body) {
 	// const agency = JSONObj["HHS Division"];
 	// const match = agency.match(/\(([^)]+)\)/);
 
-	const baseURL = "https://github.com/HHS/lodp-form/issues/new";
+	const baseURL = "https://github.com/HHS//living-hhs-open-data-plan/issues/new";
 	const params = new URLSearchParams({
 		title: title,
 		body: body,
@@ -494,7 +492,7 @@ async function createIssueOnGitHub(token, title, body) {
 	const agency = JSONObj["HHS Division"];
 	const match = agency.match(/\(([^)]+)\)/);
 
-	const createIssueAPIURL = "https://api.github.com/repos/HHS/lodp-form/issues";
+	const createIssueAPIURL = "https://api.github.com/repos/HHS/living-hhs-open-data-plan/issues";
 
 	const response = await fetch(createIssueAPIURL,
 		{
