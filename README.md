@@ -1,12 +1,15 @@
-# HHS Source Code Anti-Data Call
+# Living HHS Open Data Plan
+Welcome to the Living HHS Open Data Plan! This repository is where you may submit feedback and comments to the Living HHS Open Data Plan. For more information on the Living HHS Open Data Plan, please visit our primary community [here](https://github.com/HHS/living-hhs-open-data-plan).
 
-Tracking source code repositories, codespaces, and resources funded by HHS offices. 
+## Feedback
 
-## About This Project
+Interested in submitting your feedback on the Living HHS Open Data Plan? Follow the steps below to share your thoughts, suggest ideas, and submit comments to us!
 
-The HHS Immediate Office of the Secretary (IOS), HHS Chief Data Officer (CDO), and HHS CMS Open Source Program Office (OSPO) have an "anti-goal" to eliminate HHS data calls 
-to reduce reporting burden on program offices. To move HHS towards this goal, this "Anti-Data Call" is a GitHub pilot to eliminate Excel trackers and version control 
-challenges with data calls.
+### Tell Us About Your Experience with the Living HHS Open Data Plan
+
+If you have feedback on the Living HHS Open Data Plan, please let us know by filling out the general request for public input [form on this GitHub repository](https://hhs.github.io/lodp-form/).  
+
+This is a free response sheet that will be open for public users to read online, so please adhere to the [HHS Code of Conduct](https://github.com/HHS/living-hhs-open-data-plan/blob/main/CODE_OF_CONDUCT.md). You may respond to any of the prompts in the form, as well as submit feedback to specific modules from the Table of Contents.
 
 ## Policies
 
@@ -26,7 +29,7 @@ For more information about our Security, Vulnerability, and Responsible Disclosu
 
 A Software Bill of Materials (SBOM) is a formal record containing the details and supply chain relationships of various components used in building software.
 
-In the spirit of [Executive Order 14028 - Improving the Nation’s Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/hhs/code-anti-data-call/network/dependencies.
+In the spirit of [Executive Order 14028 - Improving the Nation’s Cyber Security](https://www.gsa.gov/technology/it-contract-vehicles-and-purchasing-programs/information-technology-category/it-security/executive-order-14028), a SBOM for this repository is provided here: https://github.com/hhs/hhs-cdo/network/dependencies.
 
 For more information and resources about SBOMs, visit: https://www.cisa.gov/sbom.
 
