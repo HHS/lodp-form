@@ -6,16 +6,20 @@
     "properties": {
         "items": {
             "Identify gaps or omissions in the Living HHS Open Data Plan, including emerging technologies, Open Data trends, issues, or priorities that should be addressed in future updates.": {
-                "type": "string"
+                "type": "string",
+                "description": "Open-ended request for comments or feedback"
             },
             "Recommend best practices for data collection, management, or usage in open formats to help HHS achieve its Open Data goals, including intra-HHS data sharing and Real-World Data (RWD) exchanges.": {
-                "type": "string"
+                "type": "string",
+                "description": "Open-ended request for comments or feedback"
             },
             "Propose ideas or examples for piloting innovative data governance models with patients, industry, academia, and other sectors to improve health data governance and transparency.": {
-                "type": "string"
+                "type": "string",
+                "description": "Open-ended request for comments or feedback"
             },
             "Highlight public-private partnerships, collaborations, or cross-sector initiatives powered by HHS Open Data that deliver measurable impact and deserve inclusion in future versions of the Living Plan.": {
-                "type": "string"
+                "type": "string",
+                "description": "Open-ended request for comments or feedback"
             },
             "Suggestions": {
                 "type": "array",
@@ -23,9 +27,13 @@
                 "items": {
                     "type": "object",
                     "properties": {
-                        "Category": {
+                        "Open-Ended Feedback Title": {
                             "type": "string",
-                            "description": "Select suggestion category",
+                            "description": "Title for your feedback on the Living HHS Open Data Plan"
+                        },
+                        "Living HHS Open Data Plan Module": {
+                            "type": "string",
+                            "description": "Select module",
                             "enum": [
                                 "HHS Objectives, Values, and Return on Investment (ROI) with Data",
                                 "Unified HHS for Data Sharing",
@@ -41,19 +49,14 @@
                                 "Appendix B - Novel Models of Data Governance: Inspired by Tribal Data Governance for Radical, Collective, Self-Governance",
                                 "Appendix C - HHS Partnerships with Transparency",
                                 "Appendix D - HHS Data Improvement Process - 2025 Status",
-                                "Other"
+                                "Other (General Comments)"
                             ]
                         },
-                        "Suggestion Title": {
+                        "Open-Ended Feedback on the Living HHS Open Data Plan": {
                             "type": "string",
-                            "description": "Title for your suggestion"
-                        },
-                        "Suggestion Description": {
-                            "type": "string",
-                            "description": "Description of your suggestion"
+                            "description": "Your comments or feedback for this module"
                         } 
-                    },
-                    "required": ["Category"]
+                    }
                 }
             }
         }
