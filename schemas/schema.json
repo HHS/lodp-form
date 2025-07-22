@@ -6,16 +6,16 @@
     "properties": {
         "items": {
             "Identify gaps or omissions in the Living HHS Open Data Plan, including emerging technologies, Open Data trends, issues, or priorities that should be addressed in future updates.": {
-                "type": "string",
+                "type": "string"
             },
             "Recommend best practices for data collection, management, or usage in open formats to help HHS achieve its Open Data goals, including intra-HHS data sharing and Real-World Data (RWD) exchanges.": {
-                "type": "string",
+                "type": "string"
             },
             "Propose ideas or examples for piloting innovative data governance models with patients, industry, academia, and other sectors to improve health data governance and transparency.": {
-                "type": "string",
+                "type": "string"
             },
             "Highlight public-private partnerships, collaborations, or cross-sector initiatives powered by HHS Open Data that deliver measurable impact and deserve inclusion in future versions of the Living Plan.": {
-                "type": "string",
+                "type": "string"
             },
             "Suggestions": {
                 "type": "array",
@@ -51,11 +51,11 @@
                         "Suggestion Description": {
                             "type": "string",
                             "description": "Description of your suggestion"
-                        }, 
+                        } 
                     },
                     "required": ["Category"]
                 }
             }
         }
-    },
+    }
 }
