@@ -1,22 +1,21 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Tell Us About Your Experience with the Living HHS Open Data Plan",
-    "description": "<p>This form is a voluntary request for public inputs and/or comments on the Living HHS Open Data Plan, published by the U.S. Department of Health and Human Services (HHS) version 1.0 in July 2025.</p><p>It is an open-ended, free response sheet for you to share feedback, ideas, and/or suggestions with HHS—and the public— on the Living HHS Open Data Plan. All submissions will be open for public users to read online, so please adhere to the HHS Code of Conduct. The below prompt is followed by the table of contents with open-ended response fields if you would like to submit comment to a specific section of the Living HHS Open Data Plan.</p><p><strong>Living HHS Open Data Plan — Feedback to HHS</strong></p><p>Please let HHS know of other emerging trends, technologies, and priorities with public benefit that are missing and should be featured in the Living HHS Open Data Plan.</p><p>List any improvements to processes for meeting Open Data goals, intra-HHS data sharing, and Real-World data exchanges to best serve you, U.S. health, and human services.</p><p>If missing from version 1.0, please let HHS know what additional partnerships, collaborations, or public engagements fueled by HHS Open Data should be featured or referenced in future iterations of the Living HHS Open Data Plan.</p><p>New data governance will be required, so please share your ideas or favorite examples on how HHS should pilot new data governance models with patients, industry, and all sectors, or otherwise improve health data governance.</p><p>Please let HHS know if any discussion topics or other issues (e.g. data assets, data collection processes, data governance, data usage, completed or on-going project, etc.) are missing and should be featured in the Living HHS Open Data Plan.</p>",
+    "title": "Tell Us About Your Experience with the <a href=\"https://github.com/HHS/living-hhs-open-data-plan\">Living HHS Open Data Plan</a>",
+    "description": "<p><strong>This form is a voluntary request for public inputs and comments on the Living HHS Open Data Plan with version 1.0 released by the U.S. Department of Health and Human Services (HHS) in July 2025</strong>. The Living HHS Open Data Plan addresses requirements in the <a href=\"https://www.congress.gov/bill/115th-congress/house-bill/4174\">OPEN Government Data Act</a> related to agency data being open by default, maintenance of agency comprehensive data inventories, dissemination of agency data via the HHS Data Catalog, maintenance of the HHS Open Data Plan, and agency engagement with the public. This work also advances HHS implementation of the <a href=\"https://www.congress.gov/bill/118th-congress/house-bill/9566\">Source code Harmonization And Reuse in Information Technology Act (SHARE IT Act) of 2024</a>, mandating Open Source and reuse of existing code for government efficiency, transparency, and technology-first delivery.</p><p><strong>All submissions to this HHS GitHub repo are open source and will be visible for public users to read online. Please adhere to the <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CODE_OF_CONDUCT.md\">HHS Code of Conduct</a> and <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CONTRIBUTING.md\">HHS GitHub Contribution Guidelines<a/>.</strong></p>",
     "type": "object",
     "properties": {
         "items": {
-            "Name": {
-                "type": "string",
-                "description": "First and last name"
+            "Identify gaps or omissions in the Living HHS Open Data Plan, including emerging technologies, Open Data trends, issues, or priorities that should be addressed in future updates.": {
+                "type": "string"
             },
-            "Email": {
-                "type": "string",
-                "format": "email",
-                "description": "Email address"
+            "Recommend best practices for data collection, management, or usage in open formats to help HHS achieve its Open Data goals, including intra-HHS data sharing and Real-World Data (RWD) exchanges.": {
+                "type": "string"
             },
-            "Organization": {
-                "type": "string",
-                "description": "Organization or affiliation (optional)"
+            "Propose ideas or examples for piloting innovative data governance models with patients, industry, academia, and other sectors to improve health data governance and transparency.": {
+                "type": "string"
+            },
+            "Highlight public-private partnerships, collaborations, or cross-sector initiatives powered by HHS Open Data that deliver measurable impact and deserve inclusion in future versions of the Living Plan.": {
+                "type": "string"
             },
             "Suggestions": {
                 "type": "array",
@@ -39,11 +38,9 @@
                                 "Public-Private Partnerships with Transparency to Accelerate Impact",
                                 "Public Engagement with, by, and for We the People",
                                 "Appendix A - Acronyms, Definitions, Keywords, and Concepts",
-                                "Appendix B - Open Science Disclosure Risk Management (2019 NSTC SOS)",
-                                "Appendix C - HHS Open Data Action Items with Timeline",
-                                "Appendix D - HHS Partnerships with Transparency",
-                                "Appendix E - Novel Models of Data Governance: Inspired by Tribal Data Governance for Radical, Collective, Self-Governance",
-                                "Appendix F – HHS Data Improvement Process – 2025 Status",
+                                "Appendix B - Novel Models of Data Governance: Inspired by Tribal Data Governance for Radical, Collective, Self-Governance",
+                                "Appendix C - HHS Partnerships with Transparency",
+                                "Appendix D - HHS Data Improvement Process - 2025 Status",
                                 "Other"
                             ]
                         },
@@ -54,35 +51,11 @@
                         "Suggestion Description": {
                             "type": "string",
                             "description": "Description of your suggestion"
-                        },
-                        "Priority Level": {
-                            "type": "string",
-                            "description": "How important is this suggestion?",
-                            "enum": [
-                                "Low",
-                                "Medium",
-                                "High",
-                                "Critical"
-                            ]
-                        },
-                        "Implementation Difficulty": {
-                            "type": "string",
-                            "description": "How difficult is this to implement?",
-                            "enum": [
-                                "Easy",
-                                "Medium",
-                                "Hard",
-                                "Very Hard"
-                            ]
-                        }  
+                        } 
                     },
                     "required": ["Category"]
                 }
             }
         }
-    },
-    "required": [
-        "Name",
-        "Email"
-    ]
+    }
 }
