@@ -44,9 +44,17 @@ function populateObject(data, schema) {
 	let reorderedObject = {}
 
 	// Array of fields following proper order of fields in schema
-	const fields = Object.keys(schema.properties.items);
+	const schemaFields = schema?.properties?.items ? Object.keys(schema.properties.items) : [];
+	const dataFields = Object.keys(data);
 
-	for (const key of fields) {
+	const allFields = [...schemaFields];
+	dataFields.forEach(field => {
+		if (!allFields.includes(field)) {
+			allFields.push(field);
+		}
+	});
+
+	for (const key of allFields) {
 		let value = data[key];
 
 		if (value === undefined || value === null) {
@@ -72,7 +80,6 @@ function populateObject(data, schema) {
 
 		reorderedObject[key] = value;
 	}
-	console.log({reorderedObject})
 	return reorderedObject;
 }
 
@@ -99,7 +106,6 @@ async function createCodeJson(data) {
 	const codeJson = await populateCodeJson(data);
 
 	window.gh_api_key = data['gh_api_key']
-	console.log("TEST")
 	console.log(window.gh_api_key)
 
 	const jsonString = JSON.stringify(codeJson, null, 2);
