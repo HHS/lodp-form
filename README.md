@@ -7,7 +7,7 @@ Interested in submitting your feedback on the Living HHS Open Data Plan? Follow 
 
 ### Tell Us About Your Experience with the Living HHS Open Data Plan
 
-If you have feedback on the Living HHS Open Data Plan, please let us know by filling out the general request for public input [form on this GitHub repository](https://hhs.github.io/lodp-form/).  
+If you have feedback on the Living HHS Open Data Plan, please let us know by filling out the general request for public input [form on this GitHub repository](https://hhs.github.io/lodp-ux/).  
 
 This is a free response sheet that will be open for public users to read online, so please adhere to the [HHS Code of Conduct](https://github.com/HHS/living-hhs-open-data-plan/blob/main/CODE_OF_CONDUCT.md). You may respond to any of the prompts in the form, as well as submit feedback to specific modules from the Table of Contents.
 
