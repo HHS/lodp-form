@@ -1,25 +1,25 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "Tell Us About Your Experience with the <a href=\"https://github.com/HHS/living-hhs-open-data-plan\">Living HHS Open Data Plan</a>",
-    "description": "<p><strong>This form is a voluntary request for public inputs and comments on the Living HHS Open Data Plan with version 1.0 released by the U.S. Department of Health and Human Services (HHS) in July 2025</strong>. The Living HHS Open Data Plan addresses requirements in the <a href=\"https://www.congress.gov/bill/115th-congress/house-bill/4174\">OPEN Government Data Act</a> related to agency data being open by default, maintenance of agency comprehensive data inventories, dissemination of agency data via the HHS Data Catalog, maintenance of the HHS Open Data Plan, and agency engagement with the public. This work also advances HHS implementation of the <a href=\"https://www.congress.gov/bill/118th-congress/house-bill/9566\">Source code Harmonization And Reuse in Information Technology Act (SHARE IT Act) of 2024</a>, mandating Open Source and reuse of existing code for government efficiency, transparency, and technology-first delivery.</p><p><strong>All submissions to this HHS GitHub repo are open source and will be visible for public users to read online. Please adhere to the <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CODE_OF_CONDUCT.md\">HHS Code of Conduct</a> and <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CONTRIBUTING.md\">HHS GitHub Contribution Guidelines<a/>.</strong></p>",
+    "title": "Tell Us About Your Experience with the <a href=\"https://github.com/HHS/living-hhs-open-data-plan\">Living HHS Open Data Plan</a><p>https://github.com/HHS/living-hhs-open-data-plan</p>",
+    "description": "<p><strong>This is a voluntary opportunity for public input and comment on the Living HHS Open Data Plan with version 1.0 released by the U.S. Department of Health and Human Services (HHS) in July 2025</strong>. The Living HHS Open Data Plan addresses requirements in the <a href=\"https://www.congress.gov/bill/115th-congress/house-bill/4174\">OPEN Government Data Act</a> related to agency data being open by default, maintenance of agency comprehensive data inventories, dissemination of agency data via the HHS Data Catalog, maintenance of the HHS Open Data Plan, and agency engagement with the public. This work also advances HHS implementation of the <a href=\"https://www.congress.gov/bill/118th-congress/house-bill/9566\">Source code Harmonization And Reuse in Information Technology Act (SHARE IT Act) of 2024</a>, mandating Open Source and reuse of existing code for government efficiency, transparency, and technology-first delivery.</p><p><strong>All submissions to this HHS GitHub repo are open source and will be visible for public users to read online. Please adhere to the <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CODE_OF_CONDUCT.md\">HHS Code of Conduct</a> and <a href=\"https://github.com/HHS/living-hhs-open-data-plan/blob/main/CONTRIBUTING.md\">HHS GitHub Contribution Guidelines<a/>.</strong></p>",
     "type": "object",
     "properties": {
         "items": {
             "Identify gaps or omissions in the Living HHS Open Data Plan, including emerging technologies, Open Data trends, issues, or priorities that should be addressed in future updates.": {
                 "type": "string",
-                "description": "Open-ended request for comments or feedback"
+                "description": "Open-ended response"
             },
             "Recommend best practices for data collection, management, or usage in open formats to help HHS achieve its Open Data goals, including intra-HHS data sharing and Real-World Data (RWD) exchanges.": {
                 "type": "string",
-                "description": "Open-ended request for comments or feedback"
+                "description": "Open-ended response"
             },
             "Propose ideas or examples for piloting innovative data governance models with patients, industry, academia, and other sectors to improve health data governance and transparency.": {
                 "type": "string",
-                "description": "Open-ended request for comments or feedback"
+                "description": "Open-ended response"
             },
             "Highlight public-private partnerships, collaborations, or cross-sector initiatives powered by HHS Open Data that deliver measurable impact and deserve inclusion in future versions of the Living Plan.": {
                 "type": "string",
-                "description": "Open-ended request for comments or feedback"
+                "description": "Open-ended response"
             },
             "Suggestions": {
                 "type": "array",
@@ -27,13 +27,13 @@
                 "items": {
                     "type": "object",
                     "properties": {
-                        "Open-Ended Feedback Title": {
+                        "Title of Open-Ended Feedback": {
                             "type": "string",
-                            "description": "Title for your feedback on the Living HHS Open Data Plan"
+                            "description": "Name or title description"
                         },
-                        "Living HHS Open Data Plan Module": {
+                        "Chapters of the Living HHS Open Data Plan": {
                             "type": "string",
-                            "description": "Select module",
+                            "description": "Dropdown lists each chapter, which is a GitHub module",
                             "enum": [
                                 "HHS Objectives, Values, and Return on Investment (ROI) with Data",
                                 "Unified HHS for Data Sharing",
@@ -54,12 +54,8 @@
                         },
                         "Open-Ended Feedback on the Living HHS Open Data Plan": {
                         "type": "string",
-                        "description": "Your comments or feedback for this module"
+                        "description": "Open-ended request for comments or feedback"
                         }
-                    },
-                    "Open-Ended Feedback on the Living HHS Open Data Plan": {
-                        "type": "string",
-                        "description": "Your comments or feedback for this module"
                     }
                 }
             }
